@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>colorful text </title>
+
+<!--meta stores data from another data 
+        <meta charset="UTF-8">
+        <meta name="description" content="FREE HTML tutorial for begineers">
+        <meta name="keywords" contents="HTML,beginner">
+        <meta name="author" content="mycode">
+        <meta name = "viewpoint" content="width=device-width,intial-scale=1.0">
+        <meta http-equiv="refresh" content="120">-->
+    
+    </head>
+    <body> 
+
+<!--style="background-color:black;">
+    <h1 style="color: #ff0000">HELLO</h1>
+    <hr>
+    <h1 style="color:hsl(92, 100%, 97%)">HIiiii</h1>
+    <p style="background-color:hwb(0 1% 59% / 0.686);color:lab(76.27% 34.24 -17.46)"> <span style="color:hwb(212 21% 25% / 0.89)">Copyright Disclaimer:</span>
+     This video is the intellectual property of Bro Code. <span style=color:#ff0000>All rights reserved</span>. No part of this video may be reproduced, distributed, or transmitted in any form or by any means, including but not limited to recording, uploading, or other electronic or mechanical methods, without my written permission, except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law.</p>
+
+    
+     iframe = embed another webpage within our webpage or we could embed our curr html doc with another html fdoc
+    ex used for ads,used in many hacking techniques
+
+    <iframe style="border:0" src="myfile.html" width ="750" height="100" >
+
+    </iframe>
+
+    <button onclick="dosomething()" style="background-color: black;color:aliceblue;border-radius:5px;width:80px;height: 40px;;">click me </button>
+    <p id="test">HELLO</p>
+    <script>
+        function dosomething(){
+            document.getElementById("test").innerHTML="BYE BYE!"
+        }
+    </script>
+-->
+
+    <form action="action_page.php" method="post">
+
+        <div>
+        <label for ="fname">first_name:</label>
+        <input type="text" id="fname" name="fname" placeholder="shinchan" required>
+        </div>
+        <br>
+
+        <div>
+        <label for ="lname">last_name:</label>
+        <input type="text" id="lname" name="lname" placeholder="Nohara" required>
+        </div>
+        <br>
+
+         <div>
+        <label for ="pass">password:</label>
+        <input type="password" id="pass" name="pass" maxlength="12" required>
+        </div>
+        <br>
+
+
+         <div>
+        <label for ="email">email:</label>
+        <input type="email" id="email" name="email" placeholder="ShNohara@gmail.com" required>
+        </div>
+        <br>
+        
+        <div>
+        <label for ="phone">phone:</label>
+        <input type="" id="pass" name="pass" placeholder="123-764-6546" required>
+        </div>
+        <br>
+
+         <div>
+        <label for ="bdate">birthdate:</label>
+        <input type="date" id="bdate" name="bdate">
+        </div>
+        <br>
+
+         <div>
+        <label>male</label>
+        <input type="radio" name="title">
+        
+        <label>female</label>
+        <input type="radio" name="title">
+
+        <label>others</label>
+        <input type="radio" name="title">
+        </div>
+        <br>
+
+        <div>
+        <label for ="paymente">payment:</label>
+        <select id="payment" name="payment">
+            <option value="visa">visa</option>
+            <option value="phonepay">phonepay</option>
+            <option value="sbi yono">sbi yono</option>
+            <option value="google pay">google pay</option>
+            <option value="credit card">credit card</option>
+        </select>
+        </div>
+        <br>
+
+        <div>
+        <label for ="accept">accept:</label>
+        <input type="checkbox" id="accept" name="accept" required>
+        </div>
+        <br>
+
+
+
+        
+        <div>
+            <input type="reset">
+        </div>
+        <br>
+
+        <div>
+            <input type="submit">
+        </div>
+    </form>
+
+
+
+
+    </body>
+</html>
