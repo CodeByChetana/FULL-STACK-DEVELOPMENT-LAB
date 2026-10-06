@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CineVerse - CSS Selector Forms</title>
+
+    <style>
+
+        /* =====================================================
+           1. SIMPLE SELECTORS
+           ===================================================== */
+
+        /* Element Selector */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0f0f14;
+            color: #ffffff;
+        }
+
+        /* ID Selector */
+        #main-title {
+            font-size: 42px;
+            margin-bottom: 8px;
+        }
+
+        /* Class Selector */
+        .movie-card {
+            background-color: #1b1b24;
+            width: 260px;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 15px;
+            display: inline-block;
+            vertical-align: top;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Group Selector */
+        h2, h3 {
+            color: #ffcc00;
+        }
+
+        /* Universal Selector */
+        * {
+            box-sizing: border-box;
+        }
+
+
+        /* =====================================================
+           2. COMBINATOR SELECTORS
+           ===================================================== */
+
+        /* Descendant Selector */
+        .movie-info p {
+            color: #cccccc;
+            line-height: 1.6;
+        }
+
+        /* Child Selector */
+        .ott-section > h3 {
+            color: #ff4d6d;
+            font-size: 25px;
+        }
+
+        /* Adjacent Sibling Selector */
+        .movie-title + p {
+            color: #00d9ff;
+            font-weight: bold;
+        }
+
+        /* General Sibling Selector */
+        .movie-title ~ span {
+            background-color: #292936;
+            color: #ffd700;
+            padding: 5px 10px;
+            border-radius: 15px;
+            margin-right: 5px;
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           3. PSEUDO-CLASS SELECTORS
+           ===================================================== */
+
+        /* :hover */
+        nav a:hover {
+            background-color: #ffcc00;
+            color: #111111;
+            border-radius: 20px;
+        }
+
+        /* :first-child */
+        .genre-list li:first-child {
+            color: #ff4d6d;
+            font-weight: bold;
+        }
+
+        /* :last-child */
+        .genre-list li:last-child {
+            color: #00e676;
+            font-weight: bold;
+        }
+
+        /* :nth-child */
+        .genre-list li:nth-child(3) {
+            color: #00d9ff;
+        }
+
+        /* :focus */
+        input:focus {
+            outline: none;
+            border: 2px solid #ffcc00;
+            box-shadow: 0 0 10px rgba(255, 204, 0, 0.4);
+        }
+
+
+        /* =====================================================
+           4. PSEUDO-ELEMENT SELECTORS
+           ===================================================== */
+
+        /* ::first-letter */
+        .description::first-letter {
+            font-size: 40px;
+            font-weight: bold;
+            color: #ffcc00;
+        }
+
+        /* ::before */
+        .featured::before {
+            content: "🔥 ";
+        }
+
+        /* ::after */
+        .featured::after {
+            content: " ⭐";
+        }
+
+        /* ::selection */
+        .description::selection {
+            background-color: #ffcc00;
+            color: #000000;
+        }
+
+
+        /* =====================================================
+           5. ATTRIBUTE SELECTORS
+           ===================================================== */
+
+        /* Text input */
+        input[type="text"] {
+            border: 2px solid #ff4d6d;
+            padding: 12px;
+        }
+
+        /* Email input */
+        input[type="email"] {
+            border: 2px solid #00d9ff;
+            padding: 12px;
+        }
+
+        /* Submit button */
+        input[type="submit"] {
+            background-color: #ffcc00;
+            color: #111111;
+            border: none;
+            padding: 12px 25px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ffffff;
+        }
+
+
+        /* =====================================================
+           GENERAL PAGE DESIGN
+           ===================================================== */
+
+        header {
+            background: linear-gradient(135deg, #171721, #29293d);
+            text-align: center;
+            padding: 50px 20px;
+            border-bottom: 2px solid #ffcc00;
+        }
+
+        header p {
+            color: #cccccc;
+            font-size: 18px;
+        }
+
+        nav {
+            background-color: #09090d;
+            padding: 18px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            padding: 10px 15px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section {
+            margin: 35px 0;
+            padding: 30px;
+            background-color: #17171f;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        section > h2 {
+            border-left: 5px solid #ffcc00;
+            padding-left: 12px;
+        }
+
+        .cards {
+            text-align: center;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(255, 204, 0, 0.2);
+        }
+
+        .movie-icon {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .movie-card p {
+            color: #bbbbbb;
+            line-height: 1.6;
+        }
+
+        .rating {
+            color: #ffd700;
+            font-size: 18px;
+        }
+
+        .ott-section {
+            background-color: #20202b;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .platform {
+            display: inline-block;
+            background-color: #292936;
+            padding: 15px 25px;
+            margin: 8px;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .genre-list {
+            line-height: 2.2;
+            font-size: 18px;
+        }
+
+        .description {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #dddddd;
+        }
+
+        .featured {
+            background: linear-gradient(135deg, #302400, #17171f);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid #806600;
+        }
+
+        form {
+            text-align: center;
+            padding: 20px;
+        }
+
+        input {
+            margin: 8px;
+            border-radius: 8px;
+            background-color: #0f0f14;
+            color: white;
+        }
+
+        footer {
+            background-color: #09090d;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            color: #aaaaaa;
+        }
+
+        footer span {
+            color: #ffcc00;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <h1 id="main-title">🎬 CineVerse</h1>
+
+        <p>
+            Movie & OTT Hub
+        </p>
+
+        <p>
+            Explore Movies • Discover Genres • Find Your Next Favorite
+        </p>
+
+    </header>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav>
+
+        <a href="#home">Home</a>
+
+        <a href="#movies">Movies</a>
+
+        <a href="#genres">Genres</a>
+
+        <a href="#ott">OTT Platforms</a>
+
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+
+    <main>
+
+
+        <!-- ================= SIMPLE SELECTORS ================= -->
+
+        <section id="home">
+
+            <h2>🎥 Popular Movies</h2>
+
+            <p>
+                This section demonstrates simple CSS selectors
+                such as element, ID, class, group and universal selectors.
+            </p>
+
+
+            <div class="cards">
+
+
+                <div class="movie-card">
+
+                    <div class="movie-icon">🚀</div>
+
+                    <h3>Interstellar</h3>
+
+                    <p>
+                        A science-fiction adventure about space,
+                        time and humanity's future.
+                    </p>
+
+                    <div class="rating">
+                        ⭐ 8.7/10
+                    </div>
+
+                </div>
+
+
+                <div class="movie-card">
+
+                    <div class="movie-icon">🦸</div>
+
+                    <h3>Superhero World</h3>
+
+                    <p>
+                        Heroes face powerful challenges while
+                        protecting the world from danger.
+                    </p>
+
+                    <div class="rating">
+                        ⭐ 8.5/10
+                    </div>
+
+                </div>
+
+
+                <div class="movie-card">
+
+                    <div class="movie-icon">🕵️</div>
+
+                    <h3>Mystery Night</h3>
+
+                    <p>
+                        A thrilling mystery where every clue
+                        reveals another hidden secret.
+                    </p>
+
+                    <div class="rating">
+                        ⭐ 8.2/10
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= COMBINATORS ================= -->
+
+        <section id="movies" class="movie-info">
+
+            <h2>🍿 CSS Combinator Selectors</h2>
+
+
+            <!-- Descendant selector -->
+
+            <div>
+
+                <h3 class="movie-title">
+                    Featured Movie
+                </h3>
+
+                <p>
+                    This paragraph demonstrates the
+                    adjacent sibling selector.
+                </p>
+
+                <span>Action</span>
+
+                <span>Adventure</span>
+
+                <span>Drama</span>
+
+            </div>
+
+
+            <br>
+
+
+            <!-- Child selector -->
+
+            <div class="ott-section">
+
+                <h3>
+                    Latest Movie Releases
+                </h3>
+
+                <p>
+                    New movies are added regularly to
+                    different streaming platforms.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PSEUDO CLASSES ================= -->
+
+        <section id="genres">
+
+            <h2>🎭 Movie Genres</h2>
+
+            <p>
+                Hover over the navigation links above to see
+                the <b>:hover</b> pseudo-class selector.
+            </p>
+
+
+            <ul class="genre-list">
+
+                <li>Action</li>
+
+                <li>Comedy</li>
+
+                <li>Science Fiction</li>
+
+                <li>Thriller</li>
+
+                <li>Animation</li>
+
+                <li>Documentary</li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- ================= PSEUDO ELEMENTS ================= -->
+
+        <section>
+
+            <h2>✨ Pseudo-Element Selectors</h2>
+
+
+            <div class="featured">
+
+                <h3>
+                    Featured Movie of the Week
+                </h3>
+
+                <p class="description">
+
+                    Movies bring stories, imagination and
+                    emotions to life. They allow audiences
+                    to experience different worlds and
+                    unforgettable characters.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= GENERAL SIBLING ================= -->
+
+        <section>
+
+            <h2>⭐ Movie Categories</h2>
+
+            <h3 class="movie-title">
+                Popular Categories
+            </h3>
+
+            <p>
+                Choose a category based on your mood.
+            </p>
+
+            <span>🔥 Action</span>
+
+            <span>😂 Comedy</span>
+
+            <span>👻 Horror</span>
+
+            <span>❤️ Romance</span>
+
+        </section>
+
+
+        <!-- ================= OTT ================= -->
+
+        <section id="ott" class="ott-section">
+
+            <h2>📺 Popular OTT Platforms</h2>
+
+            <h3>Streaming Platforms</h3>
+
+            <div class="platform">
+                🎞️ Netflix
+            </div>
+
+            <div class="platform">
+                📺 Prime Video
+            </div>
+
+            <div class="platform">
+                🎥 Disney+
+            </div>
+
+            <div class="platform">
+                🍿 JioHotstar
+            </div>
+
+        </section>
+
+
+        <!-- ================= ATTRIBUTE SELECTORS ================= -->
+
+        <section id="contact">
+
+            <h2>📩 Attribute Selectors</h2>
+
+            <p>
+                The input fields below demonstrate
+                CSS attribute selectors.
+            </p>
+
+
+            <form>
+
+                <input
+                    type="text"
+                    placeholder="Enter your name"
+                >
+
+                <br>
+
+
+                <input
+                    type="email"
+                    placeholder="Enter your email"
+                >
+
+                <br>
+
+
+                <input
+                    type="submit"
+                    value="Join CineVerse"
+                >
+
+            </form>
+
+        </section>
+
+
+        <!-- ================= FINAL SECTION ================= -->
+
+        <section>
+
+            <h2>🎬 Why CineVerse?</h2>
+
+            <p class="description">
+
+                CineVerse is a simple movie discovery platform
+                designed to demonstrate different CSS selector
+                forms. It combines movie cards, genres, streaming
+                platforms and interactive elements in a single
+                attractive webpage.
+
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 <span>CineVerse</span>
+        </p>
+
+        <p>
+            CSS Selector Forms - Laboratory Experiment 4
+        </p>
+        <p>K.Chetana-24K61A1258</p>
+
+    </footer>
+
+
+</body>
+
+</html>
