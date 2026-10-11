@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineVerse - CSS Colors</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #10101a;
+            color: white;
+        }
+
+        header {
+            background-color: navy;
+            text-align: center;
+            padding: 30px;
+        }
+
+        header h1 {
+            color: #ffcc00;
+            font-size: 36px;
+        }
+
+        header p {
+            color: rgb(220, 220, 235);
+        }
+
+        main {
+            width: 90%;
+            max-width: 1000px;
+            margin: 30px auto;
+        }
+
+        h2 {
+            color: hsl(45, 100%, 60%);
+            text-align: center;
+        }
+
+        .color-card {
+            padding: 20px;
+            margin: 18px 0;
+            border-radius: 12px;
+            border: 2px solid white;
+        }
+
+        /* 1. Named Color */
+        .named {
+            background-color: tomato;
+            color: white;
+        }
+
+        /* 2. HEX Color */
+        .hex {
+            background-color: #6c35de;
+            color: #ffffff;
+        }
+
+        /* 3. RGB Color */
+        .rgb {
+            background-color: rgb(0, 150, 180);
+            color: rgb(255, 255, 255);
+        }
+
+        /* 4. RGBA Color */
+        .rgba {
+            background-color: rgba(255, 70, 110, 0.75);
+            color: white;
+        }
+
+        /* 5. HSL Color */
+        .hsl {
+            background-color: hsl(145, 70%, 35%);
+            color: white;
+        }
+
+        .color-card h3 {
+            margin-top: 0;
+        }
+
+        .code {
+            background-color: rgba(0, 0, 0, 0.25);
+            padding: 10px;
+            border-radius: 6px;
+            font-family: monospace;
+        }
+
+        footer {
+            background-color: #080812;
+            text-align: center;
+            padding: 20px;
+            color: #cccccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🎬 CineVerse</h1>
+        <p>Experiment 5(a) — Different Ways to Reference Colors in CSS</p>
+    </header>
+
+    <main>
+        <h2>Explore CSS Color Formats</h2>
+
+        <div class="color-card named">
+            <h3>1. Named Color</h3>
+            <p>CSS uses predefined color names.</p>
+            <p class="code">background-color: tomato;</p>
+        </div>
+
+        <div class="color-card hex">
+            <h3>2. HEX Color</h3>
+            <p>HEX represents colors using hexadecimal values.</p>
+            <p class="code">background-color: #6c35de;</p>
+        </div>
+
+        <div class="color-card rgb">
+            <h3>3. RGB Color</h3>
+            <p>RGB specifies Red, Green and Blue values.</p>
+            <p class="code">background-color: rgb(0, 150, 180);</p>
+        </div>
+
+        <div class="color-card rgba">
+            <h3>4. RGBA Color</h3>
+            <p>RGBA adds an alpha value to control transparency.</p>
+            <p class="code">background-color: rgba(255, 70, 110, 0.75);</p>
+        </div>
+
+        <div class="color-card hsl">
+            <h3>5. HSL Color</h3>
+            <p>HSL uses Hue, Saturation and Lightness.</p>
+            <p class="code">background-color: hsl(145, 70%, 35%);</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 CineVerse | CSS Laboratory Experiment 5(a)</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineVerse - Font and Text CSS</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #10101a;
+            color: white;
+        }
+
+        header {
+            background-color: #17172b;
+            text-align: center;
+            padding: 30px;
+            border-bottom: 3px solid #ffcc00;
+        }
+
+        header h1 {
+            color: #ffcc00;
+            font-size: 38px;
+            margin: 0;
+        }
+
+        main {
+            width: 90%;
+            max-width: 900px;
+            margin: 30px auto;
+        }
+
+        section {
+            background-color: #1b1b2b;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+        }
+
+        h2 {
+            color: #ffcc00;
+            border-left: 5px solid #ffcc00;
+            padding-left: 12px;
+        }
+
+        .demo-card {
+            background-color: #292943;
+            padding: 18px;
+            margin: 18px 0;
+            border-radius: 8px;
+            border-left: 4px solid #8b5cf6;
+        }
+
+        .label {
+            color: #a5b4fc;
+            font-family: monospace;
+        }
+
+        /* 1. FONT SIZE */
+        .font-size-demo {
+            font-size: 28px;
+        }
+
+        /* 2. FONT WEIGHT */
+        .font-weight-demo {
+            font-weight: bold;
+        }
+
+        /* 3. FONT STYLE */
+        .font-style-demo {
+            font-style: italic;
+        }
+
+        /* 4. TEXT DECORATION */
+        .text-decoration-demo {
+            text-decoration: underline;
+            text-decoration-color: #ffcc00;
+        }
+
+        /* 5. TEXT TRANSFORM */
+        .text-transform-demo {
+            text-transform: uppercase;
+        }
+
+        /* 6. TEXT ALIGN */
+        .text-align-demo {
+            text-align: center;
+            background-color: #38385b;
+            padding: 15px;
+        }
+
+        footer {
+            background-color: #080812;
+            text-align: center;
+            padding: 20px;
+            color: #cccccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🎬 CineVerse</h1>
+        <p>Experiment 5(c) — CSS Font and Text Properties</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Font Properties</h2>
+
+            <div class="demo-card">
+                <p class="label">font-size: 28px;</p>
+                <p class="font-size-demo">Discover Amazing Movies!</p>
+            </div>
+
+            <div class="demo-card">
+                <p class="label">font-weight: bold;</p>
+                <p class="font-weight-demo">Watch Your Favorite Stories</p>
+            </div>
+
+            <div class="demo-card">
+                <p class="label">font-style: italic;</p>
+                <p class="font-style-demo">Every Movie Tells a Story.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Text Properties</h2>
+
+            <div class="demo-card">
+                <p class="label">text-decoration: underline;</p>
+                <p class="text-decoration-demo">
+                    Featured Movie of the Week
+                </p>
+            </div>
+
+            <div class="demo-card">
+                <p class="label">text-transform: uppercase;</p>
+                <p class="text-transform-demo">
+                    explore movies and ott platforms
+                </p>
+            </div>
+
+            <div class="demo-card">
+                <p class="label">text-align: center;</p>
+                <p class="text-align-demo">
+                    Welcome to CineVerse!
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 CineVerse | CSS Laboratory Experiment 5(c)</p>
+    </footer>
+
+</body>
+</html>

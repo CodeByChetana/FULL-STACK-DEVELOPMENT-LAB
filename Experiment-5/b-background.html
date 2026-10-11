@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineVerse - CSS Background Image</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            background-color: #10101a;
+
+            /* Background image settings */
+            background-image: url("movie-bg.jpg");
+            background-repeat: no-repeat;
+            background-position: center 50%;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        header {
+            background-color: rgba(5, 5, 20, 0.9);
+            padding: 30px 15px;
+            text-align: center;
+        }
+
+        header h1 {
+            color: #ffcc00;
+            font-size: 38px;
+            margin: 0 0 10px;
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        .hero {
+            min-height: 350px;
+            padding: 65px 8%;
+            background-color: rgba(10, 10, 25, 0.35);
+        }
+
+        .hero h2 {
+            color: #ffcc00;
+            font-size: 38px;
+        }
+
+        .hero p {
+            max-width: 550px;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        section {
+            background-color: rgba(15, 15, 30, 0.9);
+            margin: 35px 0;
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 204, 0, 0.6);
+        }
+
+        .movie-card {
+            display: inline-block;
+            width: 28%;
+            min-width: 180px;
+            vertical-align: top;
+            margin: 1%;
+            padding: 18px;
+            background-color: rgba(50, 40, 75, 0.9);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .movie-card .icon {
+            font-size: 45px;
+        }
+
+        .movie-card h3 {
+            color: #ffcc00;
+        }
+
+        .scroll-note {
+            text-align: center;
+            color: #ffcc00;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        @media (max-width: 600px) {
+            .movie-card {
+                display: block;
+                width: 100%;
+                margin: 15px 0;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🎬 CineVerse</h1>
+        <p>Movie & OTT Hub</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#movies">Movies</a>
+        <a href="#background">Background</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <div class="hero" id="home">
+        <h2>Lights, Camera, Action!</h2>
+        <p>
+            Discover amazing stories, unforgettable characters
+            and exciting cinematic adventures with CineVerse.
+        </p>
+        <p>Scroll down to observe the fixed background image.</p>
+    </div>
+
+    <main>
+        <section id="movies">
+            <h2>🍿 Featured Movies</h2>
+
+            <div class="movie-card">
+                <div class="icon">🚀</div>
+                <h3>Science Fiction</h3>
+                <p>Explore the mysteries of space and the future.</p>
+            </div>
+
+            <div class="movie-card">
+                <div class="icon">🦸</div>
+                <h3>Action</h3>
+                <p>Experience thrilling adventures and heroes.</p>
+            </div>
+
+            <div class="movie-card">
+                <div class="icon">🕵️</div>
+                <h3>Mystery</h3>
+                <p>Discover secrets through unexpected clues.</p>
+            </div>
+        </section>
+
+        <section id="background">
+            <h2>🖼️ CSS Background Properties</h2>
+
+            <p><b>background-image:</b> Loads the background image.</p>
+            <p><b>background-repeat: no-repeat;</b> Prevents the image from repeating.</p>
+            <p><b>background-position: center 50%;</b> Positions it horizontally in the center and vertically halfway down the background area.</p>
+            <p><b>background-attachment: fixed;</b> Keeps the background stationary as the page scrolls.</p>
+            <p><b>background-size: cover;</b> Scales the image to cover the background area.</p>
+        </section>
+
+        <section id="about">
+            <h2>✨ The Cinematic Experience</h2>
+            <p>
+                CSS background properties can create attractive
+                webpages by controlling image placement, repetition,
+                sizing and scrolling behavior.
+            </p>
+        </section>
+
+        <p class="scroll-note">
+            ↓ Scroll up and down to test the background effect ↓
+        </p>
+    </main>
+
+    <footer>
+        <p>© 2026 CineVerse | CSS Laboratory Experiment 5(b)</p>
+    </footer>
+
+</body>
+</html>

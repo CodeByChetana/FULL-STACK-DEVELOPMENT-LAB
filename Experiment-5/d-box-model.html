@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineVerse - CSS Box Model</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #10101a;
+            color: white;
+        }
+
+        header {
+            background-color: #17172b;
+            text-align: center;
+            padding: 30px;
+            border-bottom: 3px solid #ffcc00;
+        }
+
+        header h1 {
+            color: #ffcc00;
+            font-size: 38px;
+            margin: 0;
+        }
+
+        main {
+            width: 90%;
+            max-width: 900px;
+            margin: 30px auto;
+        }
+
+        section {
+            background-color: #1b1b2b;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        h2 {
+            color: #ffcc00;
+            border-left: 5px solid #ffcc00;
+            padding-left: 12px;
+        }
+
+        .intro {
+            line-height: 1.7;
+            color: #dddddd;
+        }
+
+        /* CSS BOX MODEL */
+        .outer-box {
+            width: 360px;
+            max-width: 100%;
+            margin: 35px auto;
+            border: 6px solid #ffcc00;
+            padding: 25px;
+            background-color: #38385b;
+            text-align: center;
+        }
+
+        .content {
+            background-color: #38bdf8;
+            color: #10101a;
+            padding: 20px;
+            font-weight: bold;
+        }
+
+        .explanation {
+            background-color: #292943;
+            padding: 18px;
+            margin-top: 25px;
+            border-radius: 8px;
+            line-height: 1.8;
+        }
+
+        .explanation strong {
+            color: #ffcc00;
+        }
+
+        footer {
+            background-color: #080812;
+            text-align: center;
+            padding: 20px;
+            color: #cccccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🎬 CineVerse</h1>
+        <p>Experiment 5(d) — CSS Box Model</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Understanding the CSS Box Model</h2>
+
+            <p class="intro">
+                Every HTML element is represented as a rectangular box.
+                The CSS box model consists of content, padding, border
+                and margin.
+            </p>
+
+            <div class="outer-box">
+                <div class="content">
+                    CONTENT
+                    <br>
+                    Movie Information
+                </div>
+                <p>Gold outline = Border</p>
+                <p>Space inside border = Padding</p>
+                <p>Space outside border = Margin</p>
+            </div>
+
+            <div class="explanation">
+                <p>
+                    <strong>1. Content:</strong>
+                    The actual text, image or other information inside an element.
+                </p>
+
+                <p>
+                    <strong>2. Padding:</strong>
+                    The space between the content and the border.
+                </p>
+
+                <p>
+                    <strong>3. Border:</strong>
+                    The line surrounding the content and padding.
+                </p>
+
+                <p>
+                    <strong>4. Margin:</strong>
+                    The space outside the border that separates the element
+                    from other elements.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 CineVerse | CSS Laboratory Experiment 5(d)</p>
+    </footer>
+
+</body>
+</html>
