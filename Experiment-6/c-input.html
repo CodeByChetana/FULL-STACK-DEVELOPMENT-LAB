@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineVerse - JavaScript Input Methods</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #10101a;
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            background-color: #17172b;
+            padding: 30px;
+            border-bottom: 3px solid #ffcc00;
+        }
+
+        header h1 {
+            color: #ffcc00;
+            margin: 0;
+        }
+
+        main {
+            width: 90%;
+            max-width: 750px;
+            margin: 35px auto;
+        }
+
+        section {
+            background-color: #1b1b2b;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 12px;
+        }
+
+        input {
+            display: block;
+            width: 90%;
+            max-width: 400px;
+            margin: 15px auto;
+            padding: 12px;
+            border: 1px solid #777;
+            border-radius: 8px;
+            background-color: #292943;
+            color: white;
+        }
+
+        input:focus {
+            outline: 2px solid #ffcc00;
+        }
+
+        button {
+            background-color: #ffcc00;
+            color: #10101a;
+            padding: 12px 22px;
+            margin: 8px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: white;
+        }
+
+        .result {
+            color: #38bdf8;
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+
+        footer {
+            background-color: #080812;
+            padding: 20px;
+            color: #cccccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🎬 CineVerse</h1>
+        <p>Experiment 6(c) — JavaScript Input Methods</p>
+    </header>
+
+    <main>
+
+        <!-- Method 1: Prompt -->
+        <section>
+            <h2>1. Input Using prompt()</h2>
+
+            <p>Click the button and enter your favorite movie.</p>
+
+            <button onclick="getMovie()">Enter Movie Name</button>
+
+            <p id="promptResult" class="result">
+                Your movie name will appear here.
+            </p>
+        </section>
+
+        <!-- Method 2: HTML Input Fields -->
+        <section>
+            <h2>2. Input Using HTML Fields</h2>
+
+            <p>Enter your favorite movie and its release year.</p>
+
+            <input type="text" id="movieName"
+                   placeholder="Enter movie name">
+
+            <input type="number" id="movieYear"
+                   placeholder="Enter release year">
+
+            <button onclick="displayMovie()">Submit Details</button>
+
+            <p id="formResult" class="result">
+                Your details will appear here.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 CineVerse | JavaScript Laboratory Experiment 6(c)</p>
+    </footer>
+
+    <script>
+        // Method 1: Get input using prompt()
+        function getMovie() {
+            let movie = prompt("Enter your favorite movie:");
+
+            if (movie === null) {
+                document.getElementById("promptResult").textContent =
+                    "Input cancelled.";
+            } else if (movie.trim() === "") {
+                document.getElementById("promptResult").textContent =
+                    "Please enter a movie name.";
+            } else {
+                document.getElementById("promptResult").textContent =
+                    "Your favorite movie is: " + movie;
+            }
+        }
+
+        // Method 2: Get input from HTML fields
+        function displayMovie() {
+            let movie = document.getElementById("movieName").value.trim();
+            let year = document.getElementById("movieYear").value;
+
+            if (movie === "" || year === "") {
+                document.getElementById("formResult").textContent =
+                    "Please fill in both fields.";
+                return;
+            }
+
+            document.getElementById("formResult").textContent =
+                "Movie: " + movie + " | Release Year: " + year;
+        }
+    </script>
+
+</body>
+</html>

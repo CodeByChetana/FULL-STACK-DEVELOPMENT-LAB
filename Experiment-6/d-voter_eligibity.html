@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 6(d) - Voter Eligibility</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #100f1f, #292044);
+            color: white;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 750px;
+            margin: auto;
+            background: #1c1a2e;
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid #50406c;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #c4a7ff;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #c5c0d5;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        button {
+            display: block;
+            margin: 0 auto 25px;
+            padding: 12px 24px;
+            background: #9b72e8;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #8054d0;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 14px;
+            border: 1px solid #514766;
+            text-align: center;
+        }
+
+        th {
+            background: #6d4bb0;
+            color: white;
+        }
+
+        td {
+            background: #262238;
+        }
+
+        .eligible {
+            color: #7df0b0;
+            font-weight: bold;
+        }
+
+        .not-eligible {
+            color: #ff9b9b;
+            font-weight: bold;
+        }
+
+        #message {
+            text-align: center;
+            margin-top: 20px;
+            color: #d2c5f5;
+            line-height: 1.6;
+        }
+
+        .note {
+            margin-top: 25px;
+            color: #bdb6d0;
+            font-size: 13px;
+            line-height: 1.6;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Voter Eligibility Checker</h1>
+
+        <p class="subtitle">
+            Experiment 6(d) — JavaScript Input and Type Conversion
+        </p>
+
+        <button onclick="getStudentDetails()">
+            Enter Student Details
+        </button>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Age</th>
+                        <th>Voter Eligibility by Age</th>
+                    </tr>
+                </thead>
+
+                <tbody id="studentData">
+                    <tr>
+                        <td colspan="3">Click the button to enter details.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p id="message"></p>
+
+        <p class="note">
+            Note: This program checks the minimum voting age of 18 years.
+            Actual voter eligibility also depends on applicable legal
+            requirements and voter registration.
+        </p>
+    </div>
+
+    <script>
+        function getStudentDetails() {
+            let name = prompt("Enter the student's name:");
+
+            if (name === null) {
+                document.getElementById("message").textContent =
+                    "Input cancelled.";
+                return;
+            }
+
+            name = name.trim();
+
+            if (name === "") {
+                document.getElementById("message").textContent =
+                    "Please enter a valid student name.";
+                return;
+            }
+
+            let ageInput = prompt("Enter the student's age:");
+
+            if (ageInput === null || ageInput.trim() === "") {
+                document.getElementById("message").textContent =
+                    "Please enter the student's age.";
+                return;
+            }
+
+            // Convert the prompt's string value into a number
+            let age = Number(ageInput);
+
+            if (!Number.isInteger(age) || age < 0 || age > 120) {
+                document.getElementById("message").textContent =
+                    "Please enter a valid age between 0 and 120.";
+                return;
+            }
+
+            let eligibility;
+            let statusClass;
+
+            if (age >= 18) {
+                eligibility = "Eligible by age";
+                statusClass = "eligible";
+            } else {
+                eligibility = "Not eligible by age";
+                statusClass = "not-eligible";
+            }
+
+            document.getElementById("studentData").innerHTML = `
+                <tr>
+                    <td>${escapeHTML(name)}</td>
+                    <td>${age}</td>
+                    <td class="${statusClass}">${eligibility}</td>
+                </tr>
+            `;
+
+            document.getElementById("message").textContent =
+                "Student details displayed successfully.";
+        }
+
+        // Display user-provided text safely in the HTML table
+        function escapeHTML(value) {
+            return value.replace(/[&<>"']/g, function (character) {
+                const entities = {
+                    "&": "&amp;",
+                    "<": "&lt;",
+                    ">": "&gt;",
+                    '"': "&quot;",
+                    "'": "&#39;"
+                };
+
+                return entities[character];
+            });
+        }
+    </script>
+</body>
+</html>

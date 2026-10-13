@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineVerse - JavaScript</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #10101a;
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            background-color: #17172b;
+            padding: 30px;
+            border-bottom: 3px solid #ffcc00;
+        }
+
+        h1 {
+            color: #ffcc00;
+        }
+
+        main {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        section {
+            background-color: #1b1b2b;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 12px;
+        }
+
+        button {
+            background-color: #ffcc00;
+            color: #10101a;
+            padding: 12px 22px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 8px;
+        }
+
+        button:hover {
+            background-color: white;
+        }
+
+        #message {
+            color: #38bdf8;
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #080812;
+            padding: 20px;
+            color: #cccccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🎬 CineVerse</h1>
+        <p>Experiment 6(a) — Internal and External JavaScript</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Internal JavaScript</h2>
+            <p>JavaScript written inside the HTML file using the script tag.</p>
+
+            <button onclick="internalMessage()">
+                Run Internal JavaScript
+            </button>
+        </section>
+
+        <section>
+            <h2>External JavaScript</h2>
+            <p>JavaScript written in a separate .js file and connected to HTML.</p>
+
+            <button onclick="externalMessage()">
+                Run External JavaScript
+            </button>
+        </section>
+
+        <p id="message">Click a button to see the result.</p>
+    </main>
+
+    <footer>
+        <p>© 2026 CineVerse | JavaScript Laboratory Experiment 6(a)</p>
+    </footer>
+
+    <!-- Internal JavaScript -->
+    <script>
+        function internalMessage() {
+            document.getElementById("message").textContent =
+                "Hello! This message is from internal JavaScript.";
+        }
+    </script>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineVerse - JavaScript Output Methods</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #10101a;
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            background-color: #17172b;
+            padding: 30px;
+            border-bottom: 3px solid #ffcc00;
+        }
+
+        h1 {
+            color: #ffcc00;
+        }
+
+        main {
+            max-width: 750px;
+            margin: 35px auto;
+            padding: 20px;
+        }
+
+        section {
+            background-color: #1b1b2b;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 12px;
+        }
+
+        button {
+            background-color: #ffcc00;
+            color: #10101a;
+            padding: 12px 22px;
+            margin: 8px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: white;
+        }
+
+        #result {
+            color: #38bdf8;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #080812;
+            padding: 20px;
+            color: #cccccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🎬 CineVerse</h1>
+        <p>Experiment 6(b) — JavaScript Output Methods</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>1. Alert Output</h2>
+            <p>Displays a message in a popup dialog box.</p>
+
+            <button onclick="showAlert()">Show Alert</button>
+        </section>
+
+        <section>
+            <h2>2. Console Output</h2>
+            <p>Displays a message in the browser developer console.</p>
+
+            <button onclick="showConsole()">Show Console Message</button>
+        </section>
+
+        <section>
+            <h2>3. Webpage Output</h2>
+            <p>Displays a message directly on the webpage.</p>
+
+            <button onclick="showPage()">Show Page Message</button>
+
+            <p id="result">Your output will appear here.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 CineVerse | JavaScript Laboratory Experiment 6(b)</p>
+    </footer>
+
+    <script>
+        // 1. Alert output method
+        function showAlert() {
+            alert("Welcome to CineVerse!");
+        }
+
+        // 2. Console output method
+        function showConsole() {
+            console.log("Welcome to CineVerse!");
+            console.log("JavaScript console output is working.");
+        }
+
+        // 3. Webpage output method
+        function showPage() {
+            document.getElementById("result").textContent =
+                "Welcome to CineVerse! Output displayed successfully.";
+        }
+    </script>
+
+</body>
+</html>
